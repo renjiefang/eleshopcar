@@ -109,7 +109,6 @@
         return this.data.seller
       },
       selectFoods() {
-        console.log(this.goods);
         let foods = []
         this.goods.forEach((good) => {
           good.foods.forEach((food) => {
@@ -123,7 +122,7 @@
       barTxts() {
         let ret = []
         this.goods.forEach((good) => {
-          const {type, name, foods} = good
+          const { type, name, foods } = good
           let count = 0
           foods.forEach((food) => {
             count += food.count || 0
@@ -138,9 +137,8 @@
       }
     },
     methods: {
-      onNum(foods) {
-
-          this.$set(foods, 'count', 1)
+      onNum (foods) {
+        this.$set(foods, 'count', 1)
       },
       fetch() {
         if (!this.fetched) {
@@ -149,7 +147,7 @@
             id: this.seller.id
           }).then((goods) => {
             this.goods = goods
-            console.log(this.goods);
+            console.log(this.goods)
           })
         }
       },
